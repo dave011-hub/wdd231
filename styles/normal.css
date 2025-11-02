@@ -51,7 +51,40 @@ header span {
 
 .hamburger.show::before {
     content: "\00D7";
+}/* Header layout */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 1rem 2rem;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Logo image */
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+/* Text beside logo */
+.site-title {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+
+
 
 /* Navigation */
 .navigation {
