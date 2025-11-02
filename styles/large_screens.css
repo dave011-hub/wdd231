@@ -1,0 +1,39 @@
+
+
+
+
+@media screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+        background: none;
+    }
+
+    .navigation ul {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .navigation a {
+        font-size: 1.1rem;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
