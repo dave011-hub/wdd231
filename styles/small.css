@@ -1,0 +1,327 @@
+
+
+
+
+:root {
+    --accent-1: #ffe6a7;
+    --accent-2: #83c5be;
+    --bg: #edf6f9;
+    --accent-4: #006d77;
+    --brand-font: "Bricolage Grotesque", system-ui, -apple-system, "Libre Baskerville", serif;
+    --radius: 12px;
+    --touch: 48px;
+    --max-width: 1100px;
+}
+
+/* Reset basics */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--brand-font);
+    background: linear-gradient(180deg, var(--bg), #ffffff);
+    color: #023e3a;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+/* Header (mobile) */
+.site-header {
+    display: grid;
+    grid-template-columns: 56px auto 56px;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-4);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    display: block;
+    border-radius: 8px;
+    background: var(--accent-1);
+    padding: 6px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.site-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+}
+
+/* Hamburger (three bars via spans) */
+.hamburger {
+    width: var(--touch);
+    height: var(--touch);
+    position: relative;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 12px;
+    width: 24px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: transform .32s cubic-bezier(.2, .9, .3, 1), opacity .2s ease, top .32s cubic-bezier(.2, .9, .3, 1);
+}
+
+.hamburger span:nth-child(1) {
+    top: 14px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 20px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 26px;
+}
+
+/* Open state -> X */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 20px;
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(.2);
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 20px;
+}
+
+/* Mobile nav (collapsed by default) */
+.primary-nav {
+    display: none;
+    margin: 0.8rem 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    animation: slideDown .35s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.primary-nav.open {
+    display: block;
+}
+
+.primary-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.primary-nav li {
+    border-bottom: 1px solid rgba(2, 62, 58, 0.06);
+}
+
+.primary-nav a {
+    display: block;
+    padding: .9rem 1rem;
+    color: var(--accent-4);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.primary-nav a:hover,
+.primary-nav li.current a {
+    background: var(--accent-1);
+    color: var(--accent-4);
+}
+
+/* Main, cards, gallery, CTA */
+main {
+    max-width: var(--max-width);
+    margin: 1rem auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(2, 62, 58, 0.06);
+}
+
+.feature-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: .6rem;
+}
+
+.event-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+    margin-top: .6rem;
+}
+
+.event-gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform .28s ease;
+}
+
+.event-gallery img:hover {
+    transform: scale(1.03);
+}
+
+.btn.cta {
+    display: inline-block;
+    margin-top: .6rem;
+    background: var(--accent-4);
+    color: white;
+    padding: .7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.btn.cta:hover {
+    transform: translateY(-3px);
+    background: var(--accent-2);
+    color: var(--accent-4);
+}
+
+/* Courses & filters (JS appended) */
+.filter-buttons {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    margin: .6rem 0;
+}
+
+.filter-buttons button {
+    padding: .45rem .6rem;
+    border-radius: 8px;
+    border: 1px solid rgba(2, 62, 58, 0.08);
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.filter-buttons button:hover {
+    background: var(--accent-2);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.course-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    margin-top: .75rem;
+}
+
+.course-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: .9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+.course-card.completed {
+    background: linear-gradient(90deg, var(--accent-1), #fff);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+#totalCredits {
+    margin-top: .6rem;
+    font-weight: 700;
+}
+
+/* Footer */
+.site-footer {
+    max-width: var(--max-width);
+    margin: 1.25rem auto 0;
+    display: grid;
+    gap: .6rem;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), transparent);
+    border-radius: 10px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+}
+
+.social-links {
+    display: flex;
+    gap: .75rem;
+}
+
+.social-links a img {
+    width: 28px;
+    transition: transform .22s ease, opacity .22s ease;
+}
+
+.social-links a:hover img {
+    transform: scale(1.15);
+    opacity: .9;
+}
+
+/* tiny screen adjustments */
+@media (max-width:420px) {
+    .site-header {
+        grid-template-columns: 48px auto 48px;
+        padding: .5rem;
+    }
+
+    .event-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 0;
+    }
+}
