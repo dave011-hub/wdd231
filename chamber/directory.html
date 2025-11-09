@@ -1,0 +1,76 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Accra Chamber of Commerce Directory - Connecting local businesses for growth and collaboration.">
+    <meta name="author" content="David Agbenyegah">
+    <meta property="og:title" content="Accra Chamber of Commerce Directory">
+    <meta property="og:description" content="Explore trusted Accra businesses through the official Chamber Directory.">
+    <meta property="og:image" content="https://dave011-hub.github.io/wdd231/chamber/images/og-image.jpg">
+    <meta property="og:url" content="https://dave011-hub.github.io/wdd231/chamber/directory.html">
+    <title>Accra Chamber Directory | WDD231</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small-screen.css">
+    <link rel="stylesheet" href="styles/large-screen.css">
+
+    <!-- JS -->
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
+            <span class="site-title">Accra Chamber of Commerce</span>
+            <button id="nav-toggle" aria-label="Menu">&#9776;</button>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Business Directory</h1>
+
+        <section class="view-toggle">
+            <button id="grid-view" class="active">Grid View</button>
+            <button id="list-view">List View</button>
+        </section>
+
+        <section id="members-container" class="grid-view"></section>
+    </main>
+
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/dave011-hub" target="_blank"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook.svg.svg" alt="Facebook"></a>
+        </div>
+
+        <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra, Ghana | WDD231</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

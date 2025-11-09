@@ -1,0 +1,75 @@
+
+
+
+
+[
+    {
+        "name": "Accra Tech Hub",
+        "address": "12 Independence Ave, Accra",
+        "phone": "+233 24 123 4567",
+        "website": "https://accratechhub.com",
+        "image": "social_4e7cab1ca554eabb.jpg",
+        "membershipLevel": 3,
+        "description": "Accra Tech Hub is a leading innovation center that supports startups, developers, and entrepreneurs through training, coworking spaces, and mentorship programs.",
+        "services": [
+            "Coworking Space",
+            "Tech Training",
+            "Startup Mentorship"
+        ]
+    },
+    {
+        "name": "Gold Coast Coffee Roasters",
+        "address": "Osu Oxford Street, Accra",
+        "phone": "+233 20 765 9876",
+        "website": "https://www.goldcoastroasters.com/",
+        "image": "splash-01.jpg",
+        "membershipLevel": 2,
+        "description": "A premium Ghanaian coffee brand specializing in locally sourced beans roasted to perfection for cafes and households across West Africa.",
+        "services": [
+            "Coffee Production",
+            "Café Services",
+            "Wholesale Supply"
+        ]
+    },
+    {
+        "name": "EcoBuild Ghana Ltd.",
+        "address": "Ring Road West, Accra",
+        "phone": "+233 50 998 2233",
+        "website": "https://www.instagram.com/p/C4Kq6meC_hY/",
+        "image": "OIP.webp",
+        "membershipLevel": 1,
+        "description": "EcoBuild Ghana provides sustainable construction materials and eco-friendly architectural solutions for homes and offices.",
+        "services": [
+            "Green Building Design",
+            "Eco Material Supply",
+            "Consulting"
+        ]
+    },
+    {
+        "name": "Tropical Finance Group",
+        "address": "Airport City, Accra",
+        "phone": "+233 30 277 5566",
+        "website": "https://www.tropicalfcu.com/about-us",
+        "image": "opi2.webp",
+        "membershipLevel": 3,
+        "description": "A trusted financial institution offering banking, insurance, and investment solutions tailored to both individuals and businesses.",
+        "services": [
+            "Banking",
+            "Insurance",
+            "Investment Services"
+        ]
+    },
+    {
+        "name": "Aqua Pure Bottling Co.",
+        "address": "Spintex Road, Accra",
+        "phone": "+233 27 888 4455",
+        "website": "https://www.finda.co.nz/business/listing/4ph0bk/aqua-pure-bottled-water/",
+        "image": "OIP3.webp",
+        "membershipLevel": 2,
+        "description": "Aqua Pure Bottling Co. provides high-quality bottled water with state-of-the-art purification processes ensuring clean, refreshing hydration for all.",
+        "services": [
+            "Bottled Water Distribution",
+            "Purification Services"
+        ]
+    }
+]
