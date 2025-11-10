@@ -8,20 +8,25 @@
     --background-color: #f5f5f5;
     --font-primary: "Bricolage Grotesque", sans-serif;
     --font-secondary: "Libre Baskerville", serif;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+    --gap: 1rem;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: var(--font-primary);
     color: var(--text-color);
     background-color: var(--background-color);
+    line-height: 1.6;
 }
 
-/* Header & Navigation */
+/* ===== Header ===== */
 header {
     background-color: var(--primary-color);
     color: #fff;
@@ -57,22 +62,30 @@ header {
     cursor: pointer;
 }
 
+#nav-toggle:focus {
+    outline: 2px dashed var(--secondary-color);
+    outline-offset: 4px;
+}
+
+/* ===== Navigation ===== */
 #nav-menu {
     display: none;
     flex-direction: column;
     align-items: center;
     background-color: var(--accent-color);
     width: 100%;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    overflow: hidden;
 }
 
 #nav-menu.open {
     display: flex;
+    opacity: 1;
+    max-height: 500px;
 }
 
 #nav-menu ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     width: 100%;
 }
 
@@ -86,7 +99,7 @@ header {
     padding: 1rem;
     color: #fff;
     text-decoration: none;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
 
 #nav-menu a:hover,
@@ -95,12 +108,18 @@ header {
     color: var(--accent-color);
 }
 
-/* Main */
+/* ===== Main ===== */
 main {
     padding: 1rem;
     text-align: center;
 }
 
+main h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== View Toggle Buttons ===== */
 .view-toggle {
     margin-bottom: 1rem;
 }
@@ -112,13 +131,15 @@ main {
     padding: 0.5rem 1rem;
     margin: 0.3rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     transition: transform 0.3s, background-color 0.3s;
 }
 
-.view-toggle button:hover {
+.view-toggle button:hover,
+.view-toggle button:focus {
     background-color: var(--secondary-color);
     transform: scale(1.05);
+    outline: none;
 }
 
 .view-toggle .active {
@@ -126,29 +147,34 @@ main {
     color: var(--accent-color);
 }
 
-/* Member Cards */
+/* ===== Members Container ===== */
 #members-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: var(--gap);
+    transition: all 0.3s ease;
 }
 
+/* ===== Member Cards ===== */
 .member-card {
-    background: white;
-    border: 2px solid var(--accent-color);
-    border-radius: 10px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-color);
+    box-shadow: var(--card-shadow);
     padding: 1rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .member-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
 }
 
 .member-card h2 {
@@ -156,20 +182,29 @@ main {
     color: var(--primary-color);
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
     background-color: var(--accent-color);
     color: white;
     text-align: center;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .socials img {
     width: 25px;
     margin: 0 0.5rem;
-    transition: transform 0.3s;
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .socials img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+html {
+    scroll-behavior: smooth;
 }

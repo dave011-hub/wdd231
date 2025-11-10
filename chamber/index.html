@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accra Chamber of Commerce Home - Connecting local businesses.">
+    <meta name="author" content="David Agbenyegah">
+    <title>Accra Chamber Home | WDD231</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small-screen.css">
+    <link rel="stylesheet" href="styles/large-screen.css">
+
+    <!-- Scripts -->
+    <script src="scripts/script.js" defer></script>
+
+</head>
+
+<body>
+    <!-- Header / Navigation (consistent across pages) -->
+    <header>
+        <div class="logo-container">
+            <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
+            <span class="site-title">Accra Chamber of Commerce</span>
+            <button id="nav-toggle" aria-label="Menu">&#9776;</button>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/CHICKEN-HUB.webp" alt="Accra Chamber Hero" class="hero-img">
+            <div class="hero-overlay">
+                <h1>Welcome to the Accra Chamber of Commerce</h1>
+                <p>Connecting local businesses for growth and collaboration</p>
+                <a href="#" class="btn cta">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Current Events / Weather -->
+        <section class="events-weather">
+            <div class="events">
+                <h2>Current Events</h2>
+                <p>Check out our latest business networking events in Accra.</p>
+            </div>
+            <div class="weather">
+                <h2>Weather</h2>
+                <p>Accra: 28°C, sunny</p>
+            </div>
+        </section>
+
+        <!-- Spotlight Companies -->
+        <section class="spotlights">
+            <h2>Spotlight Companies</h2>
+            <div class="spotlight-cards">
+                <div class="spotlight-card">
+                    <img src="images/OIP4.webp" alt="Company 1">
+                    <h3>Company 1</h3>
+                    <p>Leading provider of IT solutions in Accra.</p>
+                </div>
+                <div class="spotlight-card">
+                    <img src="images/viven-secures-35m-to-revolutionize-workplace-collaboration-with-ai-digital-twins-1760639287935.webp" alt="Company 2">
+                    <h3>Company 2</h3>
+                    <p>Innovative local business supporting growth in Accra.</p>
+                </div>
+                <div class="spotlight-card">
+                    <img src="images/OIP 5.webp" alt="Company 3">
+                    <h3>Company 3</h3>
+                    <p>Dedicated to community development and local services.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/dave011-hub" target="_blank"><img src="images/github.svg" alt="GitHub"></a>
+            <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a href="https://facebook.com" target="_blank"><img src="images/facebook.svg.svg" alt="Facebook"></a>
+        </div>
+        <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra, Ghana | WDD231</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

@@ -1,6 +1,8 @@
 
 
 @media (min-width: 700px) {
+
+    /* ===== Header ===== */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -12,8 +14,10 @@
     }
 
     #nav-menu {
-        display: flex;
+        display: flex !important;
         background: none;
+        max-height: none;
+        opacity: 1;
     }
 
     #nav-menu ul {
@@ -27,15 +31,30 @@
         transition: color 0.3s;
     }
 
-    #nav-menu a:hover {
+    #nav-menu a:hover,
+    #nav-menu a:focus {
         color: var(--secondary-color);
     }
 
+    /* ===== Members Grid/List Views ===== */
     #members-container.grid-view {
+        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     #members-container.list-view {
         display: block;
+    }
+
+    .member-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
     }
 }
