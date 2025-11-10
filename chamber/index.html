@@ -1,15 +1,28 @@
 
 
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Accra Chamber of Commerce Home - Connecting local businesses.">
+    <meta name="description"
+        content="Accra Chamber of Commerce – Connecting and supporting local businesses for growth and collaboration.">
     <meta name="author" content="David Agbenyegah">
-    <title>Accra Chamber Home | WDD231</title>
+    <title>Accra Chamber of Commerce | Home</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Accra Chamber of Commerce | Connecting Local Businesses">
+    <meta property="og:description"
+        content="Join the Accra Chamber of Commerce – empowering local businesses through collaboration and innovation.">
+    <meta property="og:image" content="https://dave011-hub.github.io/chamber/images/chicken-hub.webp">
+    <meta property="og:url" content="https://dave011-hub.github.io/chamber/">
+    <meta property="og:type" content="website">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,16 +38,15 @@
 
     <!-- Scripts -->
     <script src="scripts/script.js" defer></script>
-
 </head>
 
 <body>
-    <!-- Header / Navigation (consistent across pages) -->
+    <!-- Header / Navigation -->
     <header>
         <div class="logo-container">
-            <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
+            <img src="images/briefcase-fill.svg" alt="Accra Chamber logo" class="logo">
             <span class="site-title">Accra Chamber of Commerce</span>
-            <button id="nav-toggle" aria-label="Menu">&#9776;</button>
+            <button id="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
         </div>
         <nav id="nav-menu">
             <ul>
@@ -49,7 +61,7 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <img src="images/CHICKEN-HUB.webp" alt="Accra Chamber Hero" class="hero-img">
+            <img src="images/chicken-hub.webp" alt="Accra Chamber business community" class="hero-img">
             <div class="hero-overlay">
                 <h1>Welcome to the Accra Chamber of Commerce</h1>
                 <p>Connecting local businesses for growth and collaboration</p>
@@ -57,15 +69,15 @@
             </div>
         </section>
 
-        <!-- Current Events / Weather -->
+        <!-- Events & Weather -->
         <section class="events-weather">
             <div class="events">
                 <h2>Current Events</h2>
-                <p>Check out our latest business networking events in Accra.</p>
+                <p>Explore our latest networking and business development events happening in Accra.</p>
             </div>
             <div class="weather">
                 <h2>Weather</h2>
-                <p>Accra: 28°C, sunny</p>
+                <p>Accra: 28°C, Sunny</p>
             </div>
         </section>
 
@@ -74,19 +86,19 @@
             <h2>Spotlight Companies</h2>
             <div class="spotlight-cards">
                 <div class="spotlight-card">
-                    <img src="images/OIP4.webp" alt="Company 1">
-                    <h3>Company 1</h3>
-                    <p>Leading provider of IT solutions in Accra.</p>
+                    <img src="images/oip4.webp" alt="IT solutions company in Accra">
+                    <h3>TechSolve Ghana</h3>
+                    <p>Leading provider of innovative IT solutions across Accra.</p>
                 </div>
                 <div class="spotlight-card">
-                    <img src="images/viven-secures-35m-to-revolutionize-workplace-collaboration-with-ai-digital-twins-1760639287935.webp" alt="Company 2">
-                    <h3>Company 2</h3>
-                    <p>Innovative local business supporting growth in Accra.</p>
+                    <img src="images/viven-secures-35m-to-revolutionize-workplace-collaboration-with-ai-digital-twins-1760639287935.webp" alt="AI company collaborating with local businesses">
+                    <h3>Viven AI</h3>
+                    <p>Empowering local businesses through smart AI and digital transformation.</p>
                 </div>
                 <div class="spotlight-card">
-                    <img src="images/OIP 5.webp" alt="Company 3">
-                    <h3>Company 3</h3>
-                    <p>Dedicated to community development and local services.</p>
+                    <img src="images/OIP 5.webp" alt="Community services organization in Ghana">
+                    <h3>CommunityWorks</h3>
+                    <p>Supporting sustainable local development through partnerships and innovation.</p>
                 </div>
             </div>
         </section>
@@ -95,9 +107,15 @@
     <!-- Footer -->
     <footer>
         <div class="socials">
-            <a href="https://github.com/dave011-hub" target="_blank"><img src="images/github.svg" alt="GitHub"></a>
-            <a href="https://linkedin.com" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn"></a>
-            <a href="https://facebook.com" target="_blank"><img src="images/facebook.svg.svg" alt="Facebook"></a>
+            <a href="https://github.com/dave011-hub" target="_blank" aria-label="Visit GitHub profile">
+                <img src="images/github.svg" alt="GitHub logo">
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="Visit LinkedIn profile">
+                <img src="images/linkedin.svg" alt="LinkedIn logo">
+            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Visit Facebook page">
+                <img src="images/facebook.svg.svg" alt="Facebook logo">
+            </a>
         </div>
         <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra, Ghana | WDD231</p>
         <p id="lastModified"></p>

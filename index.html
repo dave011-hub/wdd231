@@ -1,2 +1,122 @@
 
 
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Dave's Chamber — Home</title>
+    <meta name="description"
+        content="Dave's Chamber of Commerce — supporting small business, events, and networking.">
+    <meta name="author" content="David Agbenyegah Bieku" >
+    <link rel="icon" href="favicon.ico">
+    <!-- Google Fonts (user-provided) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Normalize optional (you may keep or remove) -->
+    <link rel="stylesheet" href="styles/normalize.css">
+
+    <!-- small then large -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large_screens.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+
+    <!-- Scripts (defer) -->
+    <script src="scripts/index.js" defer></script>
+    
+</head>
+
+<body>
+    <header class="site-header" role="banner">
+        <div class="logo-container">
+            <img src="images/briefcase-fill.svg" alt="Dave's Chamber logo" class="logo">
+            <span class="site-name">Dave's Chamber</span>
+        </div>
+
+        <!-- Hamburger button (has internal spans for animation) -->
+        <button id="nav-button" class="hamburger" aria-label="Toggle navigation" aria-controls="primary-nav"
+            aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="chamber.html">Chamber</a></li>
+                <li><a href="final.html">Final</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="card" id="community">
+            <h2>Community Highlights</h2>
+            <p>We support local business growth with events, training, and advocacy. Discover resources, member
+                spotlights, and ways to get involved.</p>
+            <img src="images/teamwork.wep.webp" alt="Community gathering" class="feature-img">
+        </section>
+
+        <section class="card" id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Business Networking Breakfast — 10th (RSVP)</li>
+                <li>Small Business Workshop — 18th (Register)</li>
+            </ul>
+            <div class="event-gallery">
+                <img src="images/people-walking.wep.webp" alt="Networking event">
+                <img src="images/market.wep.webp" alt="Workshop">
+                <img src="images/lifestyle-scene-from-community-showing-care-support-from-people.webp" alt="Community fair">
+            </div>
+        </section>
+
+        <section class="card" id="join">
+            <h2>Join the Chamber</h2>
+            <p>Membership helps your business gain visibility, training, and networking opportunities. Choose
+                Non-Profit, Silver, or Gold levels.</p>
+            <a href="join.html" class="btn cta">Become a Member</a>
+        </section>
+
+        <!-- Courses section will be appended by scripts/index.js -->
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-left">
+            <div class="social-links" aria-label="Social media links">
+                <a href="https://github.com/dave011-hub" target="_blank" rel="noopener" aria-label="GitHub">
+                    <img src="images/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/david-agbenyegah-bieku-a62126352" target="_blank" rel="noopener"
+                    aria-label="LinkedIn">
+                    <img src="images/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter">
+                    <img src="images/twitter-x.svg" alt="Twitter">
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-center">
+            <p>&copy; <span id="currentyear"></span> David Agbenyegah Bieku | Ghana</p>
+            <p id="lastModified"></p>
+        </div>
+
+        <div class="footer-right">
+            <p class="site-credit">Dave's Chamber — connecting business & community</p>
+        </div>
+    </footer>
+</body>
+
+</html>
