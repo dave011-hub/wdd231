@@ -4,18 +4,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width,initial-scale=1" >
-    <title>Join — Accra Chamber Of Commerce<title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Join — Accra Chamber of Commerce</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="https://dave011-hub.github.io/chamber/favicon.ico">
+
+    <!-- Meta Description -->
     <meta name="description"
-        content="Join the Accra Chamber of Commerce to access member benefits, networking opportunities, business resources, and local partnerships that support your organization's growth.">
+        content="Join the Accra Chamber of Commerce to access member benefits, networking opportunities, business resources, and partnerships that support your organization's growth.">
 
-    <meta name="author" content="David Agbenyegah" >
+    <!-- Meta Author -->
+    <meta name="author" content="David Agbenyegah">
 
-
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="Join the Accra Chamber of Commerce — Membership Application">
     <meta property="og:description"
         content="Apply to join the Accra Chamber of Commerce and access valuable business resources, networking opportunities, and local growth partnerships.">
@@ -23,24 +27,24 @@
     <meta property="og:url" content="https://dave011-hub.github.io/chamber/join.html">
     <meta property="og:type" content="website">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;600;800&family=Libre+Baskerville:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/large-screen.css">
     <link rel="stylesheet" href="styles/small-screen.css">
 
-    <!-- Script -->
+    <!-- JS -->
     <script src="scripts/join.js" defer></script>
 </head>
 
 <body>
-    <!-- Header (same template as other pages) -->
+    <!-- HEADER -->
     <header class="site-header">
         <div class="logo-container">
             <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
@@ -57,169 +61,164 @@
         </nav>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main class="page-wrap">
         <h1>Join the Accra Chamber</h1>
 
         <div class="content-grid">
-            <!-- Form column -->
+            <!-- FORM COLUMN -->
             <section class="form-card">
                 <h2>Membership Application</h2>
 
-                <form id="join-form" method="get" action="thankyou.html" novalidate>
+                <form id="join-form" method="get" action="thankyou.html">
                     <label>
                         First name
-                        <input type="text" name="first" title="First name" autocomplete="given-name" required>
+                        <input type="text" name="first" autocomplete="given-name" required>
                     </label>
 
                     <label>
                         Last name
-                        <input type="text" name="last" title="Last name" autocomplete="family-name" required>
+                        <input type="text" name="last" autocomplete="family-name" required>
                     </label>
 
                     <label>
                         Organization title
-                        <input type="text" name="orgTitle" title="Organization title" autocomplete="organization-title"
+                        <input type="text" name="orgTitle" autocomplete="organization-title"
                             pattern="^[A-Za-z\-\s]{7,}$" placeholder="e.g., Senior Marketing Lead">
-                        <small class="hint">Letters, hyphens and spaces only — minimum 7 characters</small>
+                        <small class="hint">Letters, hyphens and spaces only — min 7 characters</small>
                     </label>
 
                     <label>
                         Email address
-                        <input type="email" name="email" title="Email address" autocomplete="email"
-                            placeholder="example@domain.com" required>
+                        <input type="email" name="email" autocomplete="email" placeholder="example@domain.com" required>
                     </label>
 
                     <label>
                         Mobile phone
-                        <input type="tel" name="phone" title="Mobile phone" autocomplete="tel" required
-                            placeholder="+233 20 000 0000">
+                        <input type="tel" name="phone" autocomplete="tel" placeholder="+233 20 000 0000" required>
                     </label>
 
                     <label>
                         Business / Organization name
-                        <input type="text" name="organization" title="Organization name" autocomplete="organization"
-                            required>
+                        <input type="text" name="organization" autocomplete="organization" required>
                     </label>
 
-                    <fieldset class="membership-fieldset" aria-label="Membership level">
+                    <fieldset class="membership-fieldset">
                         <legend>Membership Level</legend>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="np" required>
-                            NP (Non-profit — no fee)
+                            <input type="radio" name="membership" value="np" required> NP (Non-profit)
                         </label>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="bronze">
-                            Bronze
+                            <input type="radio" name="membership" value="bronze"> Bronze
                         </label>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="silver">
-                            Silver
+                            <input type="radio" name="membership" value="silver"> Silver
                         </label>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="gold">
-                            Gold
+                            <input type="radio" name="membership" value="gold"> Gold
                         </label>
                     </fieldset>
 
                     <label>
                         Business / Organization description
-                        <textarea name="description" title="Business description" rows="4"
+                        <textarea name="description" rows="4"
                             placeholder="Tell us about your business (optional)"></textarea>
                     </label>
 
-                    <!-- Hidden timestamp set by JS -->
                     <input type="hidden" name="timestamp" id="timestamp">
 
-                    <input type="submit" value="Apply Now" class="submit-btn">
+                    <button type="submit" class="submit-btn">Apply Now</button>
                 </form>
             </section>
 
-            <!-- Cards column -->
-            <aside class="cards-column" aria-label="Membership levels">
+            <!-- MEMBERSHIP CARDS -->
+            <aside class="cards-column">
                 <h2 class="sr-only">Membership Levels</h2>
 
-                <div id="membership-cards" class="cards">
-                    <article class="card" data-target="modal-np" tabindex="0" role="button" aria-pressed="false">
+                <div class="cards">
+                    <article class="card" data-target="modal-np" tabindex="0" role="button">
                         <h3>NP Membership</h3>
                         <p>Non-profit organizations — no fee.</p>
-                        <a href="#" class="benefits-link" data-target="modal-np">Benefits &raquo;</a>
+                        <a href="#" class="benefits-link" data-target="modal-np">Benefits »</a>
                     </article>
 
-                    <article class="card" data-target="modal-bronze" tabindex="0" role="button" aria-pressed="false">
+                    <article class="card" data-target="modal-bronze" tabindex="0" role="button">
                         <h3>Bronze</h3>
-                        <p>Basic listing and event invites.</p>
-                        <a href="#" class="benefits-link" data-target="modal-bronze">Benefits &raquo;</a>
+                        <p>Basic listing and event invitations.</p>
+                        <a href="#" class="benefits-link" data-target="modal-bronze">Benefits »</a>
                     </article>
 
-                    <article class="card" data-target="modal-silver" tabindex="0" role="button" aria-pressed="false">
+                    <article class="card" data-target="modal-silver" tabindex="0" role="button">
                         <h3>Silver</h3>
-                        <p>Directory highlight + social posts.</p>
-                        <a href="#" class="benefits-link" data-target="modal-silver">Benefits &raquo;</a>
+                        <p>Directory highlight + social features.</p>
+                        <a href="#" class="benefits-link" data-target="modal-silver">Benefits »</a>
                     </article>
 
-                    <article class="card" data-target="modal-gold" tabindex="0" role="button" aria-pressed="false">
+                    <article class="card" data-target="modal-gold" tabindex="0" role="button">
                         <h3>Gold</h3>
-                        <p>Featured spotlights and priority sponsorships.</p>
-                        <a href="#" class="benefits-link" data-target="modal-gold">Benefits &raquo;</a>
+                        <p>Spotlights, sponsorships & priority perks.</p>
+                        <a href="#" class="benefits-link" data-target="modal-gold">Benefits »</a>
                     </article>
                 </div>
             </aside>
         </div>
 
-        <!-- Modals (dialog elements) -->
-        <dialog id="modal-np" class="membership-modal" aria-labelledby="modal-np-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
-            <h3 id="modal-np-title">NP Membership (Free)</h3>
+        <!-- MODALS -->
+        <dialog id="modal-np" class="membership-modal">
+            <button class="modal-close" data-close aria-label="Close">✕</button>
+            <h3>NP Membership (Free)</h3>
             <ul>
                 <li>Directory listing</li>
                 <li>Event invites</li>
-                <li>Access to non-profit networking group</li>
+                <li>Non-profit networking access</li>
             </ul>
         </dialog>
 
-        <dialog id="modal-bronze" class="membership-modal" aria-labelledby="modal-bronze-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
-            <h3 id="modal-bronze-title">Bronze Membership</h3>
+        <dialog id="modal-bronze" class="membership-modal">
+            <button class="modal-close" data-close aria-label="Close">✕</button>
+            <h3>Bronze Membership</h3>
             <ul>
                 <li>Directory listing</li>
-                <li>Monthly newsletter mention</li>
-                <li>Access to member events</li>
+                <li>Newsletter mentions</li>
+                <li>Event access</li>
             </ul>
         </dialog>
 
-        <dialog id="modal-silver" class="membership-modal" aria-labelledby="modal-silver-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
-            <h3 id="modal-silver-title">Silver Membership</h3>
+        <dialog id="modal-silver" class="membership-modal">
+            <button class="modal-close" data-close aria-label="Close">✕</button>
+            <h3>Silver Membership</h3>
             <ul>
                 <li>Highlighted directory listing</li>
-                <li>One spotlight article per year</li>
+                <li>Spotlight article</li>
                 <li>Social media promotion</li>
             </ul>
         </dialog>
 
-        <dialog id="modal-gold" class="membership-modal" aria-labelledby="modal-gold-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
-            <h3 id="modal-gold-title">Gold Membership</h3>
+        <dialog id="modal-gold" class="membership-modal">
+            <button class="modal-close" data-close aria-label="Close">✕</button>
+            <h3>Gold Membership</h3>
             <ul>
-                <li>Featured homepage spotlight</li>
-                <li>Event sponsorship opportunities</li>
-                <li>Priority support & advertising</li>
+                <li>Featured spotlight</li>
+                <li>Sponsorship perks</li>
+                <li>Priority support</li>
             </ul>
         </dialog>
     </main>
 
-    <!-- Footer (same pattern) -->
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-left">
             <div class="social-links">
-                <a href="https://github.com/dave011-hub" target="_blank" rel="noopener"><img src="images/github.svg"
-                        alt="You can also contact us on GitHub"></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="images/facebook.svg "
-                        alt="You can also contact us on LinkedIn"></a>
+                <a href="https://github.com/dave011-hub" target="_blank" rel="noopener">
+                    <img src="images/github.svg" alt="This is our GitHub profile">
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener">
+                    <img src="images/linkedin.svg" alt="This is our LinkedIn profile">
+                </a>
             </div>
         </div>
 
@@ -232,6 +231,7 @@
             <p>WDD231 — Chamber Project</p>
         </div>
     </footer>
+
 </body>
 
 </html>
