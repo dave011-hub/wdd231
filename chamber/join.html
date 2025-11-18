@@ -1,0 +1,224 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Join — Accra Chamber</title>
+    <meta name="description" content="Join the Accra Chamber of Commerce - membership application." />
+    <meta name="author" content="David Agbenyegah" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/large-screen.css">
+    <link rel="stylesheet" href="styles/small-screen.css">
+
+    <!-- Script -->
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+    <!-- Header (same template as other pages) -->
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
+            <span class="site-title">Accra Chamber of Commerce</span>
+            <button id="nav-toggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        </div>
+
+        <nav id="nav-menu" class="primary-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-wrap">
+        <h1>Join the Accra Chamber</h1>
+
+        <div class="content-grid">
+            <!-- Form column -->
+            <section class="form-card">
+                <h2>Membership Application</h2>
+
+                <form id="join-form" method="get" action="thankyou.html" novalidate>
+                    <label>
+                        First name
+                        <input type="text" name="first" title="First name" autocomplete="given-name" required>
+                    </label>
+
+                    <label>
+                        Last name
+                        <input type="text" name="last" title="Last name" autocomplete="family-name" required>
+                    </label>
+
+                    <label>
+                        Organization title
+                        <input type="text" name="orgTitle" title="Organization title" autocomplete="organization-title"
+                            pattern="^[A-Za-z\-\s]{7,}$" placeholder="e.g., Senior Marketing Lead">
+                        <small class="hint">Letters, hyphens and spaces only — minimum 7 characters</small>
+                    </label>
+
+                    <label>
+                        Email address
+                        <input type="email" name="email" title="Email address" autocomplete="email"
+                            placeholder="example@domain.com" required>
+                    </label>
+
+                    <label>
+                        Mobile phone
+                        <input type="tel" name="phone" title="Mobile phone" autocomplete="tel" required
+                            placeholder="+233 20 000 0000">
+                    </label>
+
+                    <label>
+                        Business / Organization name
+                        <input type="text" name="organization" title="Organization name" autocomplete="organization"
+                            required>
+                    </label>
+
+                    <fieldset class="membership-fieldset" aria-label="Membership level">
+                        <legend>Membership Level</legend>
+
+                        <label class="radio-label">
+                            <input type="radio" name="membership" value="np" required>
+                            NP (Non-profit — no fee)
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="membership" value="bronze">
+                            Bronze
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="membership" value="silver">
+                            Silver
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="membership" value="gold">
+                            Gold
+                        </label>
+                    </fieldset>
+
+                    <label>
+                        Business / Organization description
+                        <textarea name="description" title="Business description" rows="4"
+                            placeholder="Tell us about your business (optional)"></textarea>
+                    </label>
+
+                    <!-- Hidden timestamp set by JS -->
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <input type="submit" value="Apply Now" class="submit-btn">
+                </form>
+            </section>
+
+            <!-- Cards column -->
+            <aside class="cards-column" aria-label="Membership levels">
+                <h2 class="sr-only">Membership Levels</h2>
+
+                <div id="membership-cards" class="cards">
+                    <article class="card" data-target="modal-np" tabindex="0" role="button" aria-pressed="false">
+                        <h3>NP Membership</h3>
+                        <p>Non-profit organizations — no fee.</p>
+                        <a href="#" class="benefits-link" data-target="modal-np">Benefits &raquo;</a>
+                    </article>
+
+                    <article class="card" data-target="modal-bronze" tabindex="0" role="button" aria-pressed="false">
+                        <h3>Bronze</h3>
+                        <p>Basic listing and event invites.</p>
+                        <a href="#" class="benefits-link" data-target="modal-bronze">Benefits &raquo;</a>
+                    </article>
+
+                    <article class="card" data-target="modal-silver" tabindex="0" role="button" aria-pressed="false">
+                        <h3>Silver</h3>
+                        <p>Directory highlight + social posts.</p>
+                        <a href="#" class="benefits-link" data-target="modal-silver">Benefits &raquo;</a>
+                    </article>
+
+                    <article class="card" data-target="modal-gold" tabindex="0" role="button" aria-pressed="false">
+                        <h3>Gold</h3>
+                        <p>Featured spotlights and priority sponsorships.</p>
+                        <a href="#" class="benefits-link" data-target="modal-gold">Benefits &raquo;</a>
+                    </article>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Modals (dialog elements) -->
+        <dialog id="modal-np" class="membership-modal" aria-labelledby="modal-np-title">
+            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <h3 id="modal-np-title">NP Membership (Free)</h3>
+            <ul>
+                <li>Directory listing</li>
+                <li>Event invites</li>
+                <li>Access to non-profit networking group</li>
+            </ul>
+        </dialog>
+
+        <dialog id="modal-bronze" class="membership-modal" aria-labelledby="modal-bronze-title">
+            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <h3 id="modal-bronze-title">Bronze Membership</h3>
+            <ul>
+                <li>Directory listing</li>
+                <li>Monthly newsletter mention</li>
+                <li>Access to member events</li>
+            </ul>
+        </dialog>
+
+        <dialog id="modal-silver" class="membership-modal" aria-labelledby="modal-silver-title">
+            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <h3 id="modal-silver-title">Silver Membership</h3>
+            <ul>
+                <li>Highlighted directory listing</li>
+                <li>One spotlight article per year</li>
+                <li>Social media promotion</li>
+            </ul>
+        </dialog>
+
+        <dialog id="modal-gold" class="membership-modal" aria-labelledby="modal-gold-title">
+            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <h3 id="modal-gold-title">Gold Membership</h3>
+            <ul>
+                <li>Featured homepage spotlight</li>
+                <li>Event sponsorship opportunities</li>
+                <li>Priority support & advertising</li>
+            </ul>
+        </dialog>
+    </main>
+
+    <!-- Footer (same pattern) -->
+    <footer class="site-footer">
+        <div class="footer-left">
+            <div class="social-links">
+                <a href="https://github.com/dave011-hub" target="_blank" rel="noopener"><img src="images/github.svg"
+                        alt="GitHub"></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="images/facebook.svg.svg "
+                        alt="LinkedIn"></a>
+            </div>
+        </div>
+
+        <div class="footer-center">
+            <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra</p>
+            <p id="lastModified"></p>
+        </div>
+
+        <div class="footer-right">
+            <p>WDD231 — Chamber Project</p>
+        </div>
+    </footer>
+</body>
+
+</html>
