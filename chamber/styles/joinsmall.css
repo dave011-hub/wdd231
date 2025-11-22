@@ -1,5 +1,4 @@
 
-
 :root {
     --accent-1: #ffe6a7;
     --accent-2: #83c5be;
@@ -11,6 +10,7 @@
     --gap: 1rem;
 }
 
+/* reset-ish */
 * {
     box-sizing: border-box
 }
@@ -22,17 +22,17 @@ body {
 
 body {
     font-family: var(--brand-font);
-    background: linear-gradient(180deg, var(--bg), #ffffff);
+    background: linear-gradient(180deg, var(--bg), #fff);
     color: var(--accent-4);
     margin: 0;
     padding: 1rem;
     line-height: 1.5;
 }
 
-/* Header */
+/* header */
 .site-header {
     display: grid;
-    grid-template-columns: 48px 1fr 48px;
+    grid-template-columns: 44px 1fr 44px;
     gap: .5rem;
     align-items: center;
     background: var(--accent-4);
@@ -42,14 +42,13 @@ body {
 }
 
 .logo {
-    width: 44px;
-    height: 44px
+    width: 40px;
+    height: 40px
 }
 
 .site-title {
     font-family: "Libre Baskerville", serif;
     font-weight: 700;
-    font-size: 1.1rem;
     color: #fff
 }
 
@@ -57,22 +56,59 @@ body {
     background: transparent;
     border: 0;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     width: var(--touch);
     height: var(--touch);
 }
 
 .hamburger::before {
-    content: "\2630"
+    content: "\2630";
+    transition: transform .22s ease
 }
 
-/* Nav - hidden small */
+.hamburger.open::before {
+    content: "\00d7";
+    transform: rotate(0deg);
+}
+
+/* nav hidden on small devices (JS toggles) */
 .primary-nav {
     display: none;
     margin-top: .6rem
 }
 
-/* Main layout */
+.primary-nav.open {
+    display: block;
+    background: #fff;
+    border-radius: 10px;
+    padding: .4rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+}
+
+.primary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.primary-nav li {
+    border-bottom: 1px solid rgba(0, 0, 0, .06)
+}
+
+.primary-nav a {
+    display: block;
+    padding: .9rem 1rem;
+    color: var(--accent-4);
+    text-decoration: none;
+    font-weight: 600
+}
+
+.primary-nav a:hover,
+.primary-nav a.current {
+    background: var(--accent-1)
+}
+
+/* main */
 main {
     max-width: 1100px;
     margin: 1rem auto
@@ -83,7 +119,7 @@ h1 {
     margin-bottom: .75rem
 }
 
-/* grid: form then cards stacked on small */
+/* layout: stacked on small (cards below form per your request) */
 .content-grid {
     display: grid;
     gap: 1rem
@@ -93,16 +129,13 @@ h1 {
     background: #fff;
     padding: 1rem;
     border-radius: var(--radius);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
 }
 
-.cards-column {}
-
-/* Form basics */
 label {
     display: block;
     margin-bottom: .6rem;
-    font-size: 0.95rem
+    font-size: .95rem
 }
 
 label input,
@@ -116,7 +149,7 @@ label textarea {
 
 .hint {
     display: block;
-    font-size: 0.8rem;
+    font-size: .8rem;
     color: rgba(0, 0, 0, .55);
     margin-top: .25rem
 }
@@ -124,7 +157,7 @@ label textarea {
 /* membership radio list */
 .membership-fieldset {
     margin: 0.5rem 0;
-    padding: 0.5rem;
+    padding: .5rem;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, .06)
 }
@@ -153,7 +186,7 @@ label textarea {
     color: var(--accent-4)
 }
 
-/* Cards */
+/* cards stacked under form on small screens */
 .cards {
     display: grid;
     grid-template-columns: 1fr;
@@ -168,8 +201,8 @@ label textarea {
     box-shadow: 0 8px 20px rgba(2, 62, 58, .06);
     transition: transform .28s ease, box-shadow .28s ease;
     cursor: default;
-    opacity: 0;
-    transform: translateY(10px) scale(.98);
+    opacity: 1;
+    transform: none;
 }
 
 .card:focus {
@@ -185,27 +218,13 @@ label textarea {
     margin: .5rem 0
 }
 
-/* Initial animation for cards on load */
-@keyframes fadeSlide {
-    from {
-        opacity: 0;
-        transform: translateY(14px) scale(.98);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-/* make links in card look like buttons */
+/* card benefit links */
 .benefits-link {
     display: inline-block;
     margin-top: .5rem;
     text-decoration: none;
     padding: .35rem .5rem;
     border-radius: 8px;
-    border: 1px solid transparent;
     background: transparent;
     color: var(--accent-4);
     transition: background .18s, color .18s
@@ -216,14 +235,14 @@ label textarea {
     color: #fff
 }
 
-/* Dialog styling */
+/* dialog */
 dialog.membership-modal {
     border: 0;
     border-radius: 12px;
     padding: 1.25rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
     width: 92%;
-    max-width: 520px;
+    max-width: 520px
 }
 
 dialog.membership-modal::backdrop {
@@ -240,7 +259,7 @@ dialog.membership-modal::backdrop {
     cursor: pointer
 }
 
-/* Footer */
+/* footer */
 .site-footer {
     max-width: 1100px;
     margin: 1rem auto;
@@ -257,18 +276,15 @@ dialog.membership-modal::backdrop {
     height: 28px
 }
 
-/* small screen tweaks */
-@media (max-width:420px) {
-    .site-header {
-        grid-template-columns: 44px 1fr 44px;
-        padding: .4rem
-    }
-
-    body {
-        padding: .6rem
-    }
-
-    .card {
-        padding: .8rem
-    }
+/* accessibility: sr-only helper */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
 }

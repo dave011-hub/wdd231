@@ -1,38 +1,38 @@
 
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Thank You — Accra Chamber</title>
-    <meta name="description" content="Thank you for applying to the Accra Chamber of Commerce.">
-    <meta name="author" content="David Agbenyegah">
+    <meta name="description"
+        content="Thank you for applying to join the Accra Chamber. This page displays your submission." />
+    <meta name="author" content="David Agbenyegah" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- fonts & styles (same) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/thankyou.css">
+    <link rel="stylesheet" href="styles/joinlarge.css">
+    <link rel="stylesheet" href="styles/joinsmall.css">
 
     <script src="scripts/thankyou.js" defer></script>
 </head>
 
 <body>
-    <header class="site-header" role="banner">
+    <header class="site-header">
         <div class="logo-container">
             <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
             <span class="site-title">Accra Chamber</span>
-            <button id="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false"
-                class="hamburger"></button>
         </div>
 
-        <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Main navigation">
+        <nav class="primary-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -42,22 +42,20 @@
     </header>
 
     <main>
-        <section class="form-card">
-            <h1>Thank you for applying</h1>
-            <p>We appreciate your interest in joining the Accra Chamber. Below is the summary of your submission:</p>
+        <h1>Thank you for applying!</h1>
+        <p>We appreciate your interest in joining the Accra Chamber. Below is a copy of the information you submitted.
+        </p>
 
-            <div id="submission-summary" class="summary" aria-live="polite">
-                <!-- JS will populate this with URLSearchParams -->
-            </div>
-
-            <p><a href="index.html" class="cta-btn">Return to Home</a></p>
+        <section id="submission-summary" class="submission-summary" aria-live="polite">
+            <!-- JS will populate this area using URLSearchParams -->
         </section>
+
+        <p><a href="index.html" class="cta-btn">Return Home</a></p>
     </main>
 
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
         <div class="footer-center">
             <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra</p>
-            <p id="lastModified"></p>
         </div>
     </footer>
 </body>

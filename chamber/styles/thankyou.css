@@ -1,0 +1,62 @@
+
+
+:root {
+    --accent-1: #ffe6a7;
+    --accent-2: #83c5be;
+    --accent-4: #006d77;
+    --brand-font: "Bricolage Grotesque", system-ui, -apple-system, "Libre Baskerville", serif;
+}
+
+body {
+    font-family: var(--brand-font);
+    background: linear-gradient(180deg, #f4fbfb, #fff);
+    color: var(--accent-4);
+    margin: 0;
+    padding: 1rem;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .6rem;
+    background: var(--accent-4);
+    color: #fff;
+    border-radius: 8px
+}
+
+.logo {
+    width: 40px
+}
+
+main {
+    max-width: 900px;
+    margin: 1rem auto;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .06)
+}
+
+.submission-summary dl {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: .5rem 1rem
+}
+
+.submission-summary dt {
+    font-weight: 700
+}
+
+.submission-summary dd {
+    margin: 0
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: .6rem 1rem;
+    background: var(--accent-4);
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none
+}

@@ -1,9 +1,10 @@
 
 
-/* large screen adjustments */
+/* desktop / large-screen adjustments (min-width:700px) */
 @media (min-width:700px) {
     .primary-nav {
-        display: block
+        display: block;
+        margin-top: 0
     }
 
     .primary-nav ul {
@@ -18,7 +19,8 @@
         padding: .35rem
     }
 
-    .primary-nav a:hover {
+    .primary-nav a:hover,
+    .primary-nav a:focus {
         color: var(--accent-1)
     }
 
@@ -46,34 +48,52 @@
     }
 
     .card {
-        opacity: 1;
-        transform: none
+        opacity: 0;
+        transform: translateY(10px) scale(.98)
     }
 
-    /* stagger animation using nth-child */
+    /* stagger animation */
     .card:nth-child(1) {
-        animation: fadeSlide .5s ease .15s both
+        animation: fadeSlide .5s ease .12s both
     }
 
     .card:nth-child(2) {
-        animation: fadeSlide .5s ease .25s both
+        animation: fadeSlide .5s ease .22s both
     }
 
     .card:nth-child(3) {
-        animation: fadeSlide .5s ease .35s both
+        animation: fadeSlide .5s ease .32s both
     }
 
     .card:nth-child(4) {
-        animation: fadeSlide .5s ease .45s both
+        animation: fadeSlide .5s ease .42s both
     }
 
-    /* form card bigger */
     .form-card {
         min-height: 420px
     }
 
-    /* dialog centered style same but larger */
     dialog.membership-modal {
         max-width: 700px
     }
+}
+
+/* keyframes used on desktop */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(.98)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+    }
+}
+
+/* some additional hover polish */
+.cta-btn:focus,
+.benefits-link:focus,
+.card:focus {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08)
 }

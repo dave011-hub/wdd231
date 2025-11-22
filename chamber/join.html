@@ -1,29 +1,40 @@
 
-
 <!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Join — Accra Chamber Of Commerce</title>
+
     <meta name="description"
-        content="Join the Accra Chamber of Commerce to access member benefits, networking opportunities, business resources, and local partnerships that support your organization's growth.">
+        content="Apply to join the Accra Chamber — access member benefits, events, featured spotlights, and networking in Accra." />
     <meta name="author" content="David Agbenyegah">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Open Graph (absolute URLs stored in this repository) -->
+    <meta property="og:title" content="Join the Accra Chamber — Membership Application" />
+    <meta property="og:description"
+        content="Apply to join the Accra Chamber and access member benefits, events, and local promotions." />
+    <meta property="og:image" content="https://dave011-hub.github.io/wdd231/chamber/images/chicken-hub.webp" />
+    <meta property="og:url" content="https://dave011-hub.github.io/wdd231/chamber/join.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- favicon (local repo path) -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Fonts (user provided) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- CSS (normalize first) -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/joinlarge.css">
     <link rel="stylesheet" href="styles/joinsmall.css">
 
-    <!-- Script -->
+    <!-- JS -->
     <script src="scripts/join.js" defer></script>
 </head>
 
@@ -32,8 +43,10 @@
         <div class="logo-container">
             <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
             <span class="site-title">Accra Chamber</span>
-            <button id="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false"
-                class="hamburger"></button>
+
+            <!-- hamburger shown only on small screens -->
+            <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false"
+                aria-label="Toggle navigation"></button>
         </div>
 
         <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Main navigation">
@@ -49,7 +62,7 @@
         <h1>Join the Accra Chamber</h1>
 
         <div class="content-grid">
-            <!-- Form column -->
+            <!-- Form column (left on large screens) -->
             <section class="form-card" aria-labelledby="membership-heading">
                 <h2 id="membership-heading">Membership Application</h2>
 
@@ -93,23 +106,19 @@
                         <legend>Membership Level</legend>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="np" required>
-                            NP (Non-profit — no fee)
+                            <input type="radio" name="membership" value="np" required> NP (Non-profit — no fee)
                         </label>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="bronze">
-                            Bronze
+                            <input type="radio" name="membership" value="bronze"> Bronze
                         </label>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="silver">
-                            Silver
+                            <input type="radio" name="membership" value="silver"> Silver
                         </label>
 
                         <label class="radio-label">
-                            <input type="radio" name="membership" value="gold">
-                            Gold
+                            <input type="radio" name="membership" value="gold"> Gold
                         </label>
                     </fieldset>
 
@@ -119,49 +128,49 @@
                             placeholder="Tell us about your business (optional)"></textarea>
                     </label>
 
-                    <!-- Hidden timestamp set by JS -->
+                    <!-- hidden timestamp populated by JS -->
                     <input type="hidden" name="timestamp" id="timestamp">
 
-                    <!-- CTA uses action wording (not "submit") -->
+                    <!-- CTA (not "submit" wording) -->
                     <input type="submit" value="Apply Now" class="cta-btn">
                 </form>
             </section>
 
-            <!-- Cards column -->
+            <!-- Cards column (right on large screens) -->
             <aside class="cards-column" aria-label="Membership levels">
                 <h2 class="sr-only">Membership Levels</h2>
 
-                <div id="membership-cards" class="cards">
+                <div id="membership-cards" class="cards" aria-hidden="false">
                     <article class="card" data-target="modal-np" tabindex="0" role="button" aria-pressed="false">
                         <h3>NP Membership</h3>
                         <p class="card-desc">Non-profit organizations — no fee</p>
-                        <a href="#" class="benefits-link" data-target="modal-np">Benefits &raquo;</a>
+                        <a href="#" class="benefits-link" data-target="modal-np">Benefits »</a>
                     </article>
 
                     <article class="card" data-target="modal-bronze" tabindex="0" role="button" aria-pressed="false">
                         <h3>Bronze</h3>
                         <p class="card-desc">Basic listing and event invites</p>
-                        <a href="#" class="benefits-link" data-target="modal-bronze">Benefits &raquo;</a>
+                        <a href="#" class="benefits-link" data-target="modal-bronze">Benefits »</a>
                     </article>
 
                     <article class="card" data-target="modal-silver" tabindex="0" role="button" aria-pressed="false">
                         <h3>Silver</h3>
                         <p class="card-desc">Directory highlight + social posts</p>
-                        <a href="#" class="benefits-link" data-target="modal-silver">Benefits &raquo;</a>
+                        <a href="#" class="benefits-link" data-target="modal-silver">Benefits »</a>
                     </article>
 
                     <article class="card" data-target="modal-gold" tabindex="0" role="button" aria-pressed="false">
                         <h3>Gold</h3>
                         <p class="card-desc">Featured spotlights and priority sponsorships</p>
-                        <a href="#" class="benefits-link" data-target="modal-gold">Benefits &raquo;</a>
+                        <a href="#" class="benefits-link" data-target="modal-gold">Benefits »</a>
                     </article>
                 </div>
             </aside>
         </div>
 
-        <!-- Reusable dialog used for each card (one per membership) -->
+        <!-- dialogs (one per membership level) -->
         <dialog id="modal-np" class="membership-modal" aria-labelledby="modal-np-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <button class="modal-close" data-close aria-label="Close">✕</button>
             <h3 id="modal-np-title">NP Membership (Free)</h3>
             <ul>
                 <li>Directory listing</li>
@@ -171,7 +180,7 @@
         </dialog>
 
         <dialog id="modal-bronze" class="membership-modal" aria-labelledby="modal-bronze-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <button class="modal-close" data-close aria-label="Close">✕</button>
             <h3 id="modal-bronze-title">Bronze Membership</h3>
             <ul>
                 <li>Directory listing</li>
@@ -181,7 +190,7 @@
         </dialog>
 
         <dialog id="modal-silver" class="membership-modal" aria-labelledby="modal-silver-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <button class="modal-close" data-close aria-label="Close">✕</button>
             <h3 id="modal-silver-title">Silver Membership</h3>
             <ul>
                 <li>Highlighted directory listing</li>
@@ -191,7 +200,7 @@
         </dialog>
 
         <dialog id="modal-gold" class="membership-modal" aria-labelledby="modal-gold-title">
-            <button class="modal-close" data-close aria-label="Close dialog">✕</button>
+            <button class="modal-close" data-close aria-label="Close">✕</button>
             <h3 id="modal-gold-title">Gold Membership</h3>
             <ul>
                 <li>Featured homepage spotlight</li>
@@ -199,6 +208,7 @@
                 <li>Priority support & advertising</li>
             </ul>
         </dialog>
+
     </main>
 
     <footer class="site-footer" role="contentinfo">
