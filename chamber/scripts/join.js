@@ -1,94 +1,81 @@
 
+// Responsive nav toggle
+const navToggle = document.getElementById('nav-toggle');
+const primaryNav = document.getElementById('primary-nav');
+if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        primaryNav.classList.toggle('open');
+        navToggle.classList.toggle('open');
+    });
+}
 
-/* join.js
-   Handles:
-   - nav toggle for small screens (keeps behavior identical to your prior scripts)
-   - timestamp hidden field fill
-   - membership cards animation & accessible keyboard activation
-   - opening/closing the membership <dialog> modals
-*/
+// Set footer dates & hidden timestamp on load
+document.addEventListener('DOMContentLoaded', () => {
+    const yearEl = document.getElementById('currentyear');
+    const lastEl = document.getElementById('lastModified');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    if (lastEl) lastEl.textContent = 'Last Modified: ' + document.lastModified;
 
-(function () {
-    // Nav toggle (if present)
-    const navToggle = document.getElementById("nav-toggle");
-    const navMenu = document.getElementById("nav-menu");
-    if (navToggle && navMenu) {
-        navToggle.addEventListener("click", () => {
-            const isOpen = navMenu.classList.toggle("open");
-            navToggle.setAttribute("aria-expanded", String(isOpen));
-            navToggle.classList.toggle("open");
-        });
-    }
+    // populate timestamp hidden field
+    const timestamp = document.getElementById('timestamp');
+    if (timestamp) timestamp.value = new Date().toISOString();
 
-    // Helper to open modal by id
-    function openModalById(id) {
-        const dialog = document.getElementById(id);
-        if (!dialog) return;
-        try {
-            if (typeof dialog.showModal === "function") {
-                dialog.showModal();
-                const close = dialog.querySelector("[data-close]");
-                if (close) close.focus();
-            } else {
-                dialog.setAttribute("open", "");
+    // make cards keyboard-activatable and wire up modals
+    setupCardsAndModals();
+});
+
+/* Cards & modals */
+function setupCardsAndModals() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        // make cards focusable via keyboard (already tabindex in markup)
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openTargetModal(card.dataset.target);
             }
-        } catch (err) {
-            console.error("Modal open error:", err);
+        });
+
+        const link = card.querySelector('.benefits-link');
+        if (link) {
+            link.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                openTargetModal(link.dataset.target);
+            });
         }
-    }
+    });
 
-    // On DOM ready
-    document.addEventListener("DOMContentLoaded", () => {
-        // set timestamp
-        const ts = document.getElementById("timestamp");
-        if (ts) ts.value = new Date().toISOString();
+    // add close handlers for modal close buttons and backdrop click & Escape key
+    const dialogs = document.querySelectorAll('dialog.membership-modal');
+    dialogs.forEach(dialog => {
+        const closeBtn = dialog.querySelector('[data-close]');
+        if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
 
-        // animate membership cards in sequence (mobile-first)
-        const cards = Array.from(document.querySelectorAll("#membership-cards .card"));
-        cards.forEach((card, i) => {
-            setTimeout(() => card.classList.add("visible"), 120 * i);
-            // keyboard support: Enter / Space opens associated modal
-            card.addEventListener("keydown", (ev) => {
-                if (ev.key === "Enter" || ev.key === " ") {
-                    const targetId = card.dataset.target;
-                    openModalById(targetId);
-                    ev.preventDefault();
-                }
-            });
+        dialog.addEventListener('cancel', (ev) => {
+            ev.preventDefault();
+            dialog.close();
         });
 
-        // wire up all benefits links/buttons
-        document.querySelectorAll(".benefits-link, #membership-cards .card").forEach(el => {
-            el.addEventListener("click", (e) => {
-                // find data-target from card or link
-                let target;
-                const cardEl = e.currentTarget.closest(".card");
-                if (cardEl && cardEl.dataset && cardEl.dataset.target) {
-                    target = cardEl.dataset.target;
-                } else if (e.currentTarget.dataset && e.currentTarget.dataset.target) {
-                    target = e.currentTarget.dataset.target;
-                } else if (e.target && e.target.closest(".benefits-link")) {
-                    target = e.target.closest(".benefits-link").dataset.target;
-                }
-
-                if (target) {
-                    e.preventDefault();
-                    openModalById(target);
-                }
-            });
-        });
-
-        // wire up close and backdrop click for each dialog
-        document.querySelectorAll(".membership-modal").forEach(dialog => {
-            // close buttons
-            dialog.querySelectorAll("[data-close]").forEach(btn => {
-                btn.addEventListener("click", () => dialog.close());
-            });
-
-            // clicking backdrop to close
-            dialog.addEventListener("click", (ev) => {
-                if (ev.target === dialog) dialog.close();
-            });
+        // close when clicking outside content (click on backdrop)
+        dialog.addEventListener('click', (ev) => {
+            // if clicked directly on dialog (not its children)
+            if (ev.target === dialog) dialog.close();
         });
     });
-})();
+}
+
+function openTargetModal(id) {
+    if (!id) return;
+    const dlg = document.getElementById(id);
+    if (dlg && typeof dlg.showModal === 'function') {
+        dlg.showModal();
+        // move focus to close button for accessibility
+        const closeBtn = dlg.querySelector('[data-close]');
+        if (closeBtn) closeBtn.focus();
+    } else if (dlg) {
+        // fallback - toggle class if dialog not supported
+        dlg.classList.add('open');
+    }
+}

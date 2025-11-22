@@ -1,43 +1,60 @@
 
 
-/* thankyou.js
-   Parses GET parameters and populates the thankyou.html output fields.
-   Also inserts footer year and lastModified.
-*/
-
-document.addEventListener("DOMContentLoaded", () => {
-    // footer date values (keeps parity with other pages)
-    const yearEl = document.getElementById("currentyear");
-    const lastModifiedEl = document.getElementById("lastModified");
+document.addEventListener('DOMContentLoaded', () => {
+    // footer info
+    const yearEl = document.getElementById('currentyear');
+    const lastEl = document.getElementById('lastModified');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
-    if (lastModifiedEl) lastModifiedEl.textContent = "Last Modified: " + document.lastModified;
+    if (lastEl) lastEl.textContent = 'Last Modified: ' + document.lastModified;
 
+    // parse query string and display required fields
     const params = new URLSearchParams(window.location.search);
+    const required = ['first', 'last', 'email', 'phone', 'organization', 'timestamp'];
+    const container = document.getElementById('submission-summary');
 
-    const mapping = [
-        { key: "first", id: "out-first" },
-        { key: "last", id: "out-last" },
-        { key: "email", id: "out-email" },
-        { key: "phone", id: "out-phone" },
-        { key: "organization", id: "out-org" },
-        { key: "timestamp", id: "out-ts" }
-    ];
+    if (!container) return;
 
-    mapping.forEach(m => {
-        const value = params.get(m.key) || "—";
-        const node = document.getElementById(m.id);
-        if (!node) return;
-        if (m.key === "timestamp" && value !== "—") {
-            // try to format ISO timestamps nicely
-            try {
-                const d = new Date(value);
-                node.textContent = d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
-            } catch {
-                node.textContent = value;
-            }
-        } else {
-            // decode URI components (browser auto-encodes GET params)
-            node.textContent = decodeURIComponent(value);
-        }
-    });
+    const missing = required.filter(k => !params.has(k) || !params.get(k).trim());
+    if (missing.length) {
+        container.innerHTML = '<p class="error">No submission data found. If you used the form, ensure the form used method="get" and action="thankyou.html".</p>';
+        return;
+    }
+
+    // build a presentable summary
+    const first = params.get('first');
+    const last = params.get('last');
+    const email = params.get('email');
+    const phone = params.get('phone');
+    const org = params.get('organization');
+    const time = params.get('timestamp');
+
+    const description = params.get('description') || '—';
+    const membership = params.get('membership') || '—';
+
+    const html = `
+    <dl>
+      <dt>Applicant</dt><dd>${escapeHtml(first)} ${escapeHtml(last)}</dd>
+      <dt>Email</dt><dd><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></dd>
+      <dt>Mobile</dt><dd>${escapeHtml(phone)}</dd>
+      <dt>Organization</dt><dd>${escapeHtml(org)}</dd>
+      <dt>Membership Level</dt><dd>${escapeHtml(membership)}</dd>
+      <dt>Description</dt><dd>${escapeHtml(description)}</dd>
+      <dt>Submitted</dt><dd>${escapeHtml(formatTimestamp(time))}</dd>
+    </dl>
+  `;
+    container.innerHTML = html;
 });
+
+// small helper to avoid XSS when echoing query text
+function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function formatTimestamp(iso) {
+    if (!iso) return '';
+    try {
+        const d = new Date(iso);
+        return d.toLocaleString();
+    } catch (e) { return iso; }
+}

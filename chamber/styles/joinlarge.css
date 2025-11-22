@@ -1,0 +1,79 @@
+
+
+/* large screen adjustments */
+@media (min-width:700px) {
+    .primary-nav {
+        display: block
+    }
+
+    .primary-nav ul {
+        display: flex;
+        gap: 1.25rem;
+        justify-content: flex-end
+    }
+
+    .primary-nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: .35rem
+    }
+
+    .primary-nav a:hover {
+        color: var(--accent-1)
+    }
+
+    /* hide hamburger on large */
+    .hamburger {
+        display: none
+    }
+
+    /* two-column layout: form left, cards right */
+    .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 1.25rem;
+        align-items: start
+    }
+
+    .cards-column {
+        position: relative
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem
+    }
+
+    .card {
+        opacity: 1;
+        transform: none
+    }
+
+    /* stagger animation using nth-child */
+    .card:nth-child(1) {
+        animation: fadeSlide .5s ease .15s both
+    }
+
+    .card:nth-child(2) {
+        animation: fadeSlide .5s ease .25s both
+    }
+
+    .card:nth-child(3) {
+        animation: fadeSlide .5s ease .35s both
+    }
+
+    .card:nth-child(4) {
+        animation: fadeSlide .5s ease .45s both
+    }
+
+    /* form card bigger */
+    .form-card {
+        min-height: 420px
+    }
+
+    /* dialog centered style same but larger */
+    dialog.membership-modal {
+        max-width: 700px
+    }
+}

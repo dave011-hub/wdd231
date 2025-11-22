@@ -1,0 +1,274 @@
+
+
+:root {
+    --accent-1: #ffe6a7;
+    --accent-2: #83c5be;
+    --bg: #edf6f9;
+    --accent-4: #006d77;
+    --brand-font: "Bricolage Grotesque", system-ui, -apple-system, "Libre Baskerville", serif;
+    --radius: 12px;
+    --touch: 48px;
+    --gap: 1rem;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: var(--brand-font);
+    background: linear-gradient(180deg, var(--bg), #ffffff);
+    color: var(--accent-4);
+    margin: 0;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+/* Header */
+.site-header {
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    gap: .5rem;
+    align-items: center;
+    background: var(--accent-4);
+    color: #fff;
+    padding: .6rem;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 44px;
+    height: 44px
+}
+
+.site-title {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff
+}
+
+.hamburger {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    width: var(--touch);
+    height: var(--touch);
+}
+
+.hamburger::before {
+    content: "\2630"
+}
+
+/* Nav - hidden small */
+.primary-nav {
+    display: none;
+    margin-top: .6rem
+}
+
+/* Main layout */
+main {
+    max-width: 1100px;
+    margin: 1rem auto
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: .75rem
+}
+
+/* grid: form then cards stacked on small */
+.content-grid {
+    display: grid;
+    gap: 1rem
+}
+
+.form-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+}
+
+.cards-column {}
+
+/* Form basics */
+label {
+    display: block;
+    margin-bottom: .6rem;
+    font-size: 0.95rem
+}
+
+label input,
+label textarea {
+    width: 100%;
+    padding: .6rem;
+    margin-top: .25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, .08)
+}
+
+.hint {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, .55);
+    margin-top: .25rem
+}
+
+/* membership radio list */
+.membership-fieldset {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, .06)
+}
+
+.radio-label {
+    display: block;
+    padding: .4rem 0
+}
+
+/* CTA */
+.cta-btn {
+    display: inline-block;
+    padding: .8rem 1.2rem;
+    background: var(--accent-4);
+    color: #fff;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    background: var(--accent-2);
+    color: var(--accent-4)
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    margin-top: .5rem
+}
+
+.card {
+    background: linear-gradient(180deg, #fff, var(--accent-1));
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(2, 62, 58, .06);
+    transition: transform .28s ease, box-shadow .28s ease;
+    cursor: default;
+    opacity: 0;
+    transform: translateY(10px) scale(.98);
+}
+
+.card:focus {
+    outline: 3px solid var(--accent-2)
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01)
+}
+
+.card .card-desc {
+    color: rgba(0, 0, 0, .7);
+    margin: .5rem 0
+}
+
+/* Initial animation for cards on load */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(14px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* make links in card look like buttons */
+.benefits-link {
+    display: inline-block;
+    margin-top: .5rem;
+    text-decoration: none;
+    padding: .35rem .5rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--accent-4);
+    transition: background .18s, color .18s
+}
+
+.benefits-link:hover {
+    background: var(--accent-2);
+    color: #fff
+}
+
+/* Dialog styling */
+dialog.membership-modal {
+    border: 0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    width: 92%;
+    max-width: 520px;
+}
+
+dialog.membership-modal::backdrop {
+    background: rgb(0 0 0 / 0.45)
+}
+
+.modal-close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    border: 0;
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer
+}
+
+/* Footer */
+.site-footer {
+    max-width: 1100px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .02), transparent);
+    border-radius: 10px;
+    display: grid;
+    gap: .5rem;
+    text-align: center
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px
+}
+
+/* small screen tweaks */
+@media (max-width:420px) {
+    .site-header {
+        grid-template-columns: 44px 1fr 44px;
+        padding: .4rem
+    }
+
+    body {
+        padding: .6rem
+    }
+
+    .card {
+        padding: .8rem
+    }
+}
