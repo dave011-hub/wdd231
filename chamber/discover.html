@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the Accra area — attractions, businesses and places of interest.">
+    <meta name="author" content="David Agbenyegah">
+
+    <title>Accra Chamber of Commerce | Discover</title>
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/small-screen.css">
+    <link rel="stylesheet" href="styles/large-screen.css">
+
+    <!-- Discover page responsive grid CSS -->
+    <link rel="stylesheet" href="styles/discovery-small.css">
+    <link rel="stylesheet" href="styles/discovery-medium.css">
+    <link rel="stylesheet" href="styles/discovery-large.css">
+
+    <!-- Scripts -->
+    <script type="module" src="scripts/discovery.js" defer></script>
+    <script src="scripts/join.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-container">
+            <img src="images/briefcase-fill.svg" alt="Accra Chamber logo" class="logo">
+            <span class="site-title">Accra Chamber of Commerce</span>
+
+            <button id="nav-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+        </div>
+
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="intro">
+            <h1>Discover Our Area</h1>
+
+            <p class="lead">
+                Explore top attractions, parks, and businesses that make our region vibrant and business-friendly.
+            </p>
+
+            <!-- JS inserts last-visit message -->
+            <div id="visit-msg" class="visit-msg" role="status" aria-live="polite"></div>
+        </section>
+
+        <!-- Card Grid (JS inserts cards here) -->
+        <section id="cards-grid" class="cards-grid" aria-label="Places of Interest"></section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="socials">
+            <a href="https://github.com/dave011-hub" target="_blank" aria-label="Visit GitHub profile">
+                <img src="images/github.svg" alt="GitHub logo">
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="Visit LinkedIn profile">
+                <img src="images/linkedin.svg" alt="LinkedIn logo">
+            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Visit Facebook page">
+                <img src="images/facebook.svg" alt="Facebook logo">
+            </a>
+        </div>
+
+        <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra, Ghana | WDD231</p>
+        <p id="lastModified"></p>
+    </footer>
+
+</body>
+
+</html>
