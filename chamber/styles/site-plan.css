@@ -1,0 +1,116 @@
+
+
+
+
+:root {
+    --primary: #84994F;
+    --secondary: #FFE797;
+    --neutral: #ECF4E8;
+    --text: #222222;
+}
+
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--neutral);
+    color: var(--text);
+    font-family: "Libre Baskerville", serif;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--primary);
+    padding: 1rem;
+    color: white;
+}
+
+.site-title {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 1.5rem;
+}
+
+h1,
+h2 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    color: var(--primary);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+
+/* Color Swatches */
+.color-swatches {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.swatch {
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    width: 120px;
+}
+
+.primary {
+    background: #84994F;
+    color: white;
+}
+
+.secondary {
+    background: #FFE797;
+}
+
+.neutral {
+    background: #ECF4E8;
+}
+
+.text {
+    background: #222;
+    color: white;
+}
+
+/* Wireframes */
+figure {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+figure img {
+    width: 70%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Code Block */
+.code-block {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: white;
+    border-top: 1px solid #ccc;
+}
