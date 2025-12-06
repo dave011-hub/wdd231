@@ -1,0 +1,87 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Workers — FIXIT</title>
+    <meta name="description" content="Browse skilled workers near you.">
+    <meta name="author" content="David Agbenyegah">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/project-small.css">
+    <link rel="stylesheet" href="styles/project-large.css">
+
+    <script type="module" src="scripts/workers.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo" class="logo" />
+                <span class="site-title">FIXIT</span>
+            </div>
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation"
+                aria-expanded="false">&#9776;</button>
+
+            <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="workers.html" class="active">Workers</a></li>
+                    <li><a href="join.html">Join as Worker</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="workers-hero">
+            <h1>Nearby Workers</h1>
+            <p class="lead">Filter by trade, rating, or distance. Click a worker to see details.</p>
+
+            <div class="controls">
+                <input id="filter-trade" placeholder="Filter by trade (e.g. plumber)" />
+                <select id="sort-by" aria-label="Sort workers">
+                    <option value="distance">Closest</option>
+                    <option value="rating">Top rated</option>
+                    <option value="experience">Most experienced</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="workers-grid" class="cards-grid" aria-live="polite"></section>
+
+        <!-- Modal -->
+        <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+            <div class="modal-content">
+                <button id="modal-close" class="modal-close" aria-label="Close dialog">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="brand">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo small" class="logo-sm">
+                <span>© <span id="year2"></span> FIXIT — David Agbenyegah</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

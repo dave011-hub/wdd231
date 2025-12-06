@@ -1,0 +1,76 @@
+
+
+@media(min-width:720px) {
+    .nav-menu {
+        display: block
+    }
+
+    .nav-menu ul {
+        display: flex;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-items: center
+    }
+
+    .nav-menu a {
+        color: white;
+        text-decoration: none;
+        padding: .45rem .65rem;
+        border-radius: 6px
+    }
+
+    .nav-menu a.active,
+    .nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.08)
+    }
+
+    .nav-toggle {
+        display: none
+    }
+
+    .hero {
+        grid-template-columns: 1fr 420px;
+        padding: 2rem;
+        align-items: center
+    }
+
+    .hero-left h1 {
+        font-size: 2.4rem
+    }
+
+    .hero-wireframe {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08)
+    }
+
+    .plan-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .plan {
+        padding: 2rem
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem
+    }
+
+    .card img {
+        width: 120px;
+        height: 120px
+    }
+}
+
+@media(min-width:1000px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    .plan-grid {
+        grid-template-columns: repeat(4, 1fr)
+    }
+}

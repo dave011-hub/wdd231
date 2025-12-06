@@ -1,0 +1,128 @@
+
+
+{
+    "workers": [
+        {
+            "id": 1,
+            "name": "Kwame Mensah",
+            "trade": "Electrician",
+            "location": "Osu, Accra",
+            "rating": 4.7,
+            "experience": 3,
+            "img": "images/worker1.webp",
+            "bio": "Reliable electrician with 3 years experience in residential wiring."
+        },
+        {
+            "id": 2,
+            "name": "Faceva Boateng",
+            "trade": "Plumber",
+            "location": "Kokomlemle, Accra",
+            "rating": 4.9,
+            "experience": 6,
+            "img": "images/worker2.webp",
+            "bio": "Focused on leaks, drainage and bathroom installations."
+        },
+        {
+            "id": 3,
+            "name": "Kojo Ofori",
+            "trade": "Electrician",
+            "location": "Kumasi",
+            "rating": 4.6,
+            "experience": 5,
+            "img": "images/worker3.webp",
+            "bio": "Commercial and home electrician; safety-first approach."
+        },
+        {
+            "id": 4,
+            "name": "Amina Hawa",
+            "trade": "Carpenter",
+            "location": "Nima, Accra",
+            "rating": 4.8,
+            "experience": 8,
+            "img": "images/worker4.webp",
+            "bio": "Custom cabinetry and furniture maker."
+        },
+        {
+            "id": 5,
+            "name": "Samuel Tetteh",
+            "trade": "Painter",
+            "location": "Madina, Accra",
+            "rating": 4.4,
+            "experience": 4,
+            "img": "images/worker5.webp",
+            "bio": "Interior and exterior painting, color consultations."
+        },
+        {
+            "id": 6,
+            "name": "Grace Nuamah",
+            "trade": "Cleaner",
+            "location": "East Legon, Accra",
+            "rating": 4.5,
+            "experience": 2,
+            "img": "images/worker6.webp",
+            "bio": "Home and office deep cleaning specialist."
+        },
+        {
+            "id": 7,
+            "name": "Yaw Addo",
+            "trade": "Locksmith",
+            "location": "Tema",
+            "rating": 4.3,
+            "experience": 6,
+            "img": "images/worker7.webp",
+            "bio": "Emergency lockout service and lock installation."
+        },
+        {
+            "id": 8,
+            "name": "Linda Mensah",
+            "trade": "Seamstress",
+            "location": "Koforidua",
+            "rating": 4.6,
+            "experience": 7,
+            "img": "images/worker8.webp",
+            "bio": "Alterations, tailoring, and custom designs."
+        },
+        {
+            "id": 9,
+            "name": "Josephine Baah",
+            "trade": "Gardener",
+            "location": "Accra Hills",
+            "rating": 4.5,
+            "experience": 5,
+            "img": "images/worker9.webp",
+            "bio": "Landscape maintenance and garden set up."
+        },
+        {
+            "id": 10,
+            "name": "Peter Osei",
+            "trade": "Roofer",
+            "location": "Ashaiman",
+            "rating": 4.2,
+            "experience": 9,
+            "img": "images/worker10.webp",
+            "bio": "Roof repairs, leak fixing, and installations."
+        },
+        {
+            "id": 11,
+            "name": "Linda Owusu",
+            "trade": "Welder",
+            "location": "Kumasi",
+            "rating": 4.7,
+            "experience": 6,
+            "img": "images/worker11.webp",
+            "bio": "Metal fabrication and repairs."
+        },
+        {
+            "id": 12,
+            "name": "Emmanuel Koranteng",
+            "trade": "HVAC",
+            "location": "Accra Central",
+            "rating": 4.1,
+            "experience": 4,
+            "img": "images/worker12.jpg",
+            "bio": "AC repair and maintenance."
+        }
+       
+        
+    ]
+}

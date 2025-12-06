@@ -1,0 +1,83 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join FIXIT — Worker Signup</title>
+    <meta name="description" content="Trained tradespeople can create a worker profile to get jobs near them.">
+    <meta name="author" content="David Agbenyegah">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/project-small.css">
+    <link rel="stylesheet" href="styles/project-large.css">
+
+    <script type="module" src="scripts/form.js" defer></script>
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo" class="logo" />
+                <span class="site-title">FIXIT</span>
+            </div>
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation"
+                aria-expanded="false">&#9776;</button>
+
+            <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="workers.html">Workers</a></li>
+                    <li><a href="join.html" class="active">Join as Worker</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="join-main">
+        <h1>Join as a Worker</h1>
+        <p class="lead">Fill out the form to create a public profile.</p>
+
+        <form id="join-form" action="form-action.html" method="GET" class="worker-form" novalidate>
+            <label for="wname">Full name</label>
+            <input id="wname" name="name" required />
+
+            <label for="wtrade">Trade / Skill</label>
+            <input id="wtrade" name="trade" required />
+
+            <label for="wlocation">Location / Neighborhood</label>
+            <input id="wlocation" name="location" required />
+
+            <label for="wexp">Years of experience</label>
+            <input id="wexp" name="experience" type="number" min="0" required />
+
+            <label for="wrate">Hourly rate (GHS)</label>
+            <input id="wrate" name="rate" type="number" min="0" required />
+
+            <button class="btn-primary" type="submit">Create Profile</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="brand">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo small" class="logo-sm">
+                <span>© <span id="year3"></span> FIXIT — David Agbenyegah</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,235 +1,111 @@
 
+
 <!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Join — Accra Chamber Of Commerce</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FIXIT — Find Skilled Workers Near You</title>
 
     <meta name="description"
-        content="Apply to join the Accra Chamber — access member benefits, events, featured spotlights, and networking in Accra." />
+        content="FIXIT connects skilled tradespeople with customers across Ghana. Find plumbers, electricians, carpenters, and more near you.">
+
     <meta name="author" content="David Agbenyegah">
 
-    <!-- Open Graph (absolute URLs stored in this repository) -->
-    <meta property="og:title" content="Join the Accra Chamber — Membership Application" />
+    <!-- Open Graph for FIXIT -->
+    <meta property="og:title" content="FIXIT — Find Skilled Workers Near You" />
     <meta property="og:description"
-        content="Apply to join the Accra Chamber and access member benefits, events, and local promotions." />
-    <meta property="og:image" content="https://dave011-hub.github.io/wdd231/chamber/images/chicken-hub.webp" />
-    <meta property="og:url" content="https://dave011-hub.github.io/wdd231/chamber/join.html" />
+        content="Hire trusted local tradespeople across Ghana — plumbers, electricians, carpenters, masons and more." />
+    <meta property="og:image" content="https://your-domain.com/images/hero-fixit.jpg" />
+    <meta property="og:url" content="https://your-domain.com/project.html" />
     <meta property="og:type" content="website" />
 
-    <!-- favicon (local repo path) -->
+    <!-- Icons -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Fonts (user provided) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Libre+Baskerville:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <!-- CSS (normalize first) -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/joinlarge.css">
-    <link rel="stylesheet" href="styles/joinsmall.css">
+    <link rel="stylesheet" href="styles/project-small.css">
+    <link rel="stylesheet" href="styles/project-large.css">
 
     <!-- JS -->
-    <script src="scripts/join.js" defer></script>
+    <script defer src="scripts/main.js"></script>
 </head>
 
 <body>
-    <header class="site-header" role="banner">
-        <div class="logo-container">
-            <img src="images/briefcase-fill.svg" alt="Accra Chamber Logo" class="logo">
-            <span class="site-title">Accra Chamber</span>
+    <header>
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo" class="logo">
+                <span class="site-title">FIXIT</span>
+            </div>
 
-            <!-- hamburger shown only on small screens -->
-            <button id="nav-toggle" class="hamburger" aria-controls="primary-nav" aria-expanded="false"
-                aria-label="Toggle navigation"></button>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav id="nav-menu" class="nav-menu">
+                <ul>
+                    <li><a href="project.html" class="active">Home</a></li>
+                    <li><a href="workers.html">Workers</a></li>
+                    <li><a href="join.html">Join as Worker</a></li>
+                    <li><a href="form-action.html">Form Action</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Main navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html" class="current">Join</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <h1>Join the Accra Chamber</h1>
 
-        <div class="content-grid">
-            <!-- Form column (left on large screens) -->
-            <section class="form-card" aria-labelledby="membership-heading">
-                <h2 id="membership-heading">Membership Application</h2>
+    <!-- HERO SECTION WITH FULL IMAGE -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <img src="images/hero-fixit.jpg" alt="Skilled workers at work" class="hero-img">
 
-                <form id="join-form" method="get" action="thankyou.html" novalidate>
-                    <label>
-                        First name
-                        <input type="text" name="first" title="First name" autocomplete="given-name" required>
-                    </label>
+        <div class="hero-text">
+            <h1>Hire Skilled Workers Near You</h1>
+            <p>Quick, reliable, and trusted tradespeople across Ghana.</p>
 
-                    <label>
-                        Last name
-                        <input type="text" name="last" title="Last name" autocomplete="family-name" required>
-                    </label>
-
-                    <label>
-                        Organization title
-                        <input type="text" name="orgTitle" title="Organization title" autocomplete="organization-title"
-                            pattern="^[A-Za-z\-\s]{7,}$" placeholder="e.g., Senior Marketing Lead" required>
-                        <small class="hint">Letters, hyphens and spaces only — minimum 7 characters</small>
-                    </label>
-
-                    <label>
-                        Email address
-                        <input type="email" name="email" title="Email address" autocomplete="email"
-                            placeholder="example@domain.com" required>
-                    </label>
-
-                    <label>
-                        Mobile phone
-                        <input type="tel" name="phone" title="Mobile phone" autocomplete="tel"
-                            placeholder="+233 24 000 0000" required>
-                    </label>
-
-                    <label>
-                        Business / Organization name
-                        <input type="text" name="organization" title="Organization name" autocomplete="organization"
-                            required>
-                    </label>
-
-                    <fieldset class="membership-fieldset" aria-label="Membership level" role="radiogroup">
-                        <legend>Membership Level</legend>
-
-                        <label class="radio-label">
-                            <input type="radio" name="membership" value="np" required> NP (Non-profit — no fee)
-                        </label>
-
-                        <label class="radio-label">
-                            <input type="radio" name="membership" value="bronze"> Bronze
-                        </label>
-
-                        <label class="radio-label">
-                            <input type="radio" name="membership" value="silver"> Silver
-                        </label>
-
-                        <label class="radio-label">
-                            <input type="radio" name="membership" value="gold"> Gold
-                        </label>
-                    </fieldset>
-
-                    <label>
-                        Business / Organization description
-                        <textarea name="description" title="Business description" rows="4"
-                            placeholder="Tell us about your business (optional)"></textarea>
-                    </label>
-
-                    <!-- hidden timestamp populated by JS -->
-                    <input type="hidden" name="timestamp" id="timestamp">
-
-                    <!-- CTA (not "submit" wording) -->
-                    <input type="submit" value="Apply Now" class="cta-btn">
-                </form>
-            </section>
-
-            <!-- Cards column (right on large screens) -->
-            <aside class="cards-column" aria-label="Membership levels">
-                <h2 class="sr-only">Membership Levels</h2>
-
-                <div id="membership-cards" class="cards" aria-hidden="false">
-                    <article class="card" data-target="modal-np" tabindex="0" role="button" aria-pressed="false">
-                        <h3>NP Membership</h3>
-                        <p class="card-desc">Non-profit organizations — no fee</p>
-                        <a href="#" class="benefits-link" data-target="modal-np">Benefits »</a>
-                    </article>
-
-                    <article class="card" data-target="modal-bronze" tabindex="0" role="button" aria-pressed="false">
-                        <h3>Bronze</h3>
-                        <p class="card-desc">Basic listing and event invites</p>
-                        <a href="#" class="benefits-link" data-target="modal-bronze">Benefits »</a>
-                    </article>
-
-                    <article class="card" data-target="modal-silver" tabindex="0" role="button" aria-pressed="false">
-                        <h3>Silver</h3>
-                        <p class="card-desc">Directory highlight + social posts</p>
-                        <a href="#" class="benefits-link" data-target="modal-silver">Benefits »</a>
-                    </article>
-
-                    <article class="card" data-target="modal-gold" tabindex="0" role="button" aria-pressed="false">
-                        <h3>Gold</h3>
-                        <p class="card-desc">Featured spotlights and priority sponsorships</p>
-                        <a href="#" class="benefits-link" data-target="modal-gold">Benefits »</a>
-                    </article>
-                </div>
-            </aside>
+            <div class="hero-buttons">
+                <a href="workers.html" class="btn-primary">Browse Workers</a>
+                <a href="join.html" class="btn-secondary">Become a Worker</a>
+            </div>
         </div>
+    </section>
 
-        <!-- dialogs (one per membership level) -->
-        <dialog id="modal-np" class="membership-modal" aria-labelledby="modal-np-title">
-            <button class="modal-close" data-close aria-label="Close">✕</button>
-            <h3 id="modal-np-title">NP Membership (Free)</h3>
-            <ul>
-                <li>Directory listing</li>
-                <li>Event invites</li>
-                <li>Access to non-profit networking group</li>
-            </ul>
-        </dialog>
 
-        <dialog id="modal-bronze" class="membership-modal" aria-labelledby="modal-bronze-title">
-            <button class="modal-close" data-close aria-label="Close">✕</button>
-            <h3 id="modal-bronze-title">Bronze Membership</h3>
-            <ul>
-                <li>Directory listing</li>
-                <li>Monthly newsletter mention</li>
-                <li>Access to member events</li>
-            </ul>
-        </dialog>
+    <footer>
+        <div class="footer-inner">
+            <div class="brand">
+                <img src="images/briefcase-fill.svg" class="logo-sm" alt="FIXIT logo small">
+                <span>© <span id="year"></span> FIXIT — David Agbenyegah</span>
+            </div>
 
-        <dialog id="modal-silver" class="membership-modal" aria-labelledby="modal-silver-title">
-            <button class="modal-close" data-close aria-label="Close">✕</button>
-            <h3 id="modal-silver-title">Silver Membership</h3>
-            <ul>
-                <li>Highlighted directory listing</li>
-                <li>One spotlight article per year</li>
-                <li>Social media promotion</li>
-            </ul>
-        </dialog>
+            <div class="links">
+                <a href="project.html">Home</a>
+                <a href="workers.html">Workers</a>
+                <a href="join.html">Join</a>
+            </div>
 
-        <dialog id="modal-gold" class="membership-modal" aria-labelledby="modal-gold-title">
-            <button class="modal-close" data-close aria-label="Close">✕</button>
-            <h3 id="modal-gold-title">Gold Membership</h3>
-            <ul>
-                <li>Featured homepage spotlight</li>
-                <li>Event sponsorship opportunities</li>
-                <li>Priority support & advertising</li>
-            </ul>
-        </dialog>
-
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-        <div class="footer-left">
-            <div class="social-links">
-                <a href="https://github.com/dave011-hub" target="_blank" rel="noopener"><img src="images/github.svg"
-                        alt="GitHub"></a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="images/linkedin.svg"
-                        alt="LinkedIn"></a>
+            <!-- Social SVG icons -->
+            <div class="social">
+                <img src="images/facebook.svg" alt="Facebook">
+                <img src="images/instagram.svg" alt="Instagram">
+                <img src="images/twitter.svg" alt="Twitter">
             </div>
         </div>
 
-        <div class="footer-center">
-            <p>&copy; <span id="currentyear"></span> David Agbenyegah | Accra</p>
-            <p id="lastModified"></p>
-        </div>
-
-        <div class="footer-right">
-            <p>WDD231 — Chamber Project</p>
-        </div>
+        <p id="lastModified"></p>
     </footer>
+
 </body>
 
 </html>

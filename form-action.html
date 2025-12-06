@@ -1,0 +1,83 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Form Submission — FIXIT</title>
+    <meta name="description" content="Display of submitted form data.">
+    <meta name="author" content="David Agbenyegah">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small-screen.css">
+    <link rel="stylesheet" href="styles/large-screen.css">
+
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo" class="logo" />
+                <span class="site-title">FIXIT</span>
+            </div>
+
+            <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation"
+                aria-expanded="false">&#9776;</button>
+
+            <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="workers.html">Workers</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="form-action-main">
+        <h1>Submission Received</h1>
+        <div id="results" class="results-block" aria-live="polite">
+            <!-- JS will populate with URLSearchParams -->
+        </div>
+        <p><a href="index.html" class="btn-outline">Return Home</a></p>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="brand">
+                <img src="images/briefcase-fill.svg" alt="FIXIT logo small" class="logo-sm">
+                <span>© <span id="year4"></span> FIXIT — David Agbenyegah</span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        // Inline small module to parse query and display
+        const params = new URLSearchParams(window.location.search);
+        const resultsEl = document.getElementById('results');
+        if (params.toString()) {
+            const entries = Array.from(params.entries());
+            const dl = document.createElement('dl');
+            entries.forEach(([k, v]) => {
+                const dt = document.createElement('dt'); dt.textContent = k;
+                const dd = document.createElement('dd'); dd.textContent = v;
+                dl.appendChild(dt); dl.appendChild(dd);
+            });
+            resultsEl.appendChild(dl);
+        } else {
+            resultsEl.innerHTML = '<p>No form data found. Please submit the form.</p>';
+        }
+    </script>
+</body>
+
+</html>
