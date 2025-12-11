@@ -1,0 +1,228 @@
+
+
+/* ================================
+   FIXIT GLOBAL MOBILE STYLE (SMALL)
+   ================================ */
+
+/* COLOR VARIABLES */
+:root {
+    --primary: #84994F;
+    --secondary: #FFE797;
+    --neutral: #ECF4E8;
+    --text: #222222;
+
+    --font-heading: "Bricolage Grotesque", sans-serif;
+    --font-body: "Libre Baskerville", serif;
+}
+
+/* GENERAL RESET */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--neutral);
+    font-family: var(--font-body);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ======================
+   HEADER + NAVIGATION
+   ====================== */
+
+header {
+    background: var(--primary);
+    padding: 1rem;
+    color: white;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 38px;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Mobile hamburger */
+.nav-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hidden menu (mobile) */
+.nav-menu {
+    display: none;
+    background: var(--primary);
+    margin-top: 1rem;
+}
+
+.nav-menu ul {
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 0.8rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ======================
+   HERO SECTION
+   ====================== */
+
+.hero {
+    height: 75vh;
+    background: url("../images/landing-hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--secondary);
+    color: var(--text);
+}
+
+.btn-primary:hover {
+    background: #ffde6b;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+}
+
+/* ======================
+   SIMPLE ANIMATIONS
+   ====================== */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-delay {
+    animation: fadeIn 1.4s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-slow {
+    animation: fadeIn 1.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+
+footer {
+    background: white;
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    border-top: 2px solid var(--primary);
+    text-align: center;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.logo-sm {
+    width: 32px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+.video-link a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.video-link a:hover {
+    text-decoration: underline;
+}

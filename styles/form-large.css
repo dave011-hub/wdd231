@@ -1,0 +1,54 @@
+
+
+/* ================================
+   LARGE SCREEN FIXIT STYLES
+   ================================ */
+
+@media (min-width: 768px) {
+
+    /* HEADER */
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: block !important;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .nav-menu li a {
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: background 0.3s;
+    }
+
+    .nav-menu li a:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* HERO */
+    .hero {
+        height: 85vh;
+        padding: 4rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .tagline {
+        font-size: 1.3rem;
+    }
+
+    /* Footer layout */
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
